@@ -1,0 +1,9 @@
+import Link from 'next/link';
+import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { services } from '@/data/site';
+import { PageHero } from '@/components/sections/PageHero';
+import { VisualCard } from '@/components/sections/VisualCard';
+
+export const metadata = { title: 'What we do' };
+
+export default function ServicesPage() { return <><PageHero eyebrow="What we do" title="Technology services for the way your business operates." intro="From web and mobile applications to messaging, payment integration, AI assistants and ongoing support, we build the systems that help African businesses communicate, operate and grow."/><section className="service-index"><div className="service-index-intro"><span className="eyebrow">Technology services</span><p>Choose a focused capability or combine the services your organisation needs to build, integrate and operate dependable technology.</p></div><div className="service-index-grid">{services.map((service, index) => <Link key={service.slug} href={`/services/${service.slug}`} className="service-index-card"><VisualCard title={service.title} text={service.blurb} Icon={service.icon} number={`0${index + 1}`} /><span className="card-arrow"><ArrowUpRight /></span></Link>)}</div></section><section className="process-section"><span className="eyebrow">How we work</span><h2>A clear path from discovery to dependable delivery.</h2><div className="process-grid">{['Understand the operation', 'Define the approach', 'Build and integrate', 'Support what launches'].map((item, i) => <article key={item}><b>0{i + 1}</b><h3>{item}</h3><p>{['We learn how your people, customers and existing systems work today.', 'We agree the outcomes, scope and integrations that matter most.', 'We design, build, test and connect the solution to your operation.', 'We help your team run, maintain and improve the technology after launch.'][i]}</p><CheckCircle2/></article>)}</div></section></> }

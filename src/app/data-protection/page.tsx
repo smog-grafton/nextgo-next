@@ -1,0 +1,6 @@
+import Link from 'next/link';
+import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+
+export const metadata = { title: 'Data protection & privacy' };
+
+export default function DataProtectionPage() { return <section className="privacy-page"><span className="eyebrow">Data protection & privacy</span><h1>Privacy and data protection.</h1><p className="privacy-intro">Next Go Tech Africa maintains Privacy Policy, Terms and Conditions, and Cookie Policy documents. The current published policy version is 0.1-draft, effective 12 August 2026.</p><div className="privacy-sections"><article><h2>Privacy Policy</h2><p>Explains how personal information supplied through Next Go Tech Africa channels is collected, used and protected.</p></article><article><h2>Terms and Conditions</h2><p>Sets the terms governing use of Next Go Tech Africa services and digital platforms.</p></article><article><h2>Cookie Policy</h2><p>Explains the preferences stored in your browser and how you can manage them.</p></article></div><div className="privacy-note"><CheckCircle2/><p>We collect project enquiries through our secure lead endpoint so our team can respond to requests for communication, payment and software services.</p></div><Link className="button primary" href="/contact">Ask a question <ArrowUpRight size={20}/></Link></section>; }

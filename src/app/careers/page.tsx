@@ -1,0 +1,6 @@
+import Link from 'next/link';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
+
+export const metadata = { title: 'Careers' };
+
+export default function CareersPage() { return <><section className="careers-hero"><span className="eyebrow"><Sparkles size={20}/>Careers</span><h1>Build technology that helps African businesses grow.</h1><p>Next Go Tech Africa builds communication, payment and software infrastructure for the businesses shaping Africa’s digital future.</p><Link href="/contact" className="button primary">Contact our team <ArrowUpRight size={20}/></Link></section><section className="career-grid"><article><b>01</b><h2>Reliability</h2><p>We build systems businesses can depend on, day to day.</p></article><article><b>02</b><h2>Africa-first thinking</h2><p>Our products are designed around how African businesses actually operate.</p></article><article><b>03</b><h2>Partnership</h2><p>We work alongside clients as a long-term technology partner.</p></article></section><section className="open-roles"><span className="eyebrow">Opportunities</span><h2>Published opportunities will appear here.</h2><p>Use the contact form to introduce yourself to the team and share the area of work you are interested in.</p><Link className="text-link" href="/contact">Contact Next Go Tech Africa <ArrowUpRight size={19}/></Link></section></>; }
