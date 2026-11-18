@@ -31,9 +31,28 @@ test('mobile navigation is reachable and the contact form submits an enquiry', a
 });
 
 test('representative public routes render', async ({ page }) => {
-  for (const route of ['/about', '/services', '/solutions', '/case-studies', '/careers', '/internships', '/life-at-next-go', '/book-a-call', '/data-protection']) {
+  for (const route of ['/about', '/services', '/solutions', '/products', '/case-studies', '/careers', '/internships', '/life-at-next-go', '/book-a-call', '/data-protection']) {
     const response = await page.goto(route);
     expect(response?.status()).toBe(200);
     await expect(page.locator('h1')).toBeVisible();
   }
+});
+
+test('every published product and solution has a static detail page', async ({ page }) => {
+  const routes = [
+    '/products/studiopass', '/products/messaging-platform', '/products/payment-solutions', '/products/ai-assistants', '/products/business-software',
+    '/solutions/communication-solutions', '/solutions/payment-solutions', '/solutions/customer-engagement', '/solutions/digital-transformation',
+  ];
+  for (const route of routes) {
+    const response = await page.goto(route);
+    expect(response?.status()).toBe(200);
+    await expect(page.locator('h1')).toBeVisible();
+  }
+});
+
+test('unknown product routes use the custom 404 page', async ({ page }) => {
+  const response = await page.goto('/products/unknown-product');
+  expect(response?.status()).toBe(404);
+  await expect(page.getByRole('heading', { name: 'We could not find that page.' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Explore products' })).toBeVisible();
 });
