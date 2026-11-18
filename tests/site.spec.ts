@@ -3,6 +3,7 @@ import { expect, test } from '@playwright/test';
 test('floating header opens the Solutions menu and compacts on scroll', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { name: "Powering Africa's digital future." })).toBeVisible();
+  await expect(page.getByRole('img', { name: 'Next Go Tech' }).first()).toBeVisible();
   await page.getByRole('button', { name: 'Solutions' }).click();
   await expect(page.getByRole('region', { name: 'Solutions' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Communication Solutions' })).toBeVisible();

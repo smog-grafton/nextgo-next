@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, Globe2, Menu, X } from 'lucide-react';
 import { products, services, solutions } from '@/data/site';
@@ -16,8 +17,9 @@ const menuLinks = [
 export function Mark({ full = false }: { full?: boolean }) {
   return (
     <Link href="/" className="brand" aria-label="Next Go Tech Africa home">
-      <span className="brand-mark"><i>N</i><b>G</b></span>
-      {full && <span className="brand-name">NEXT GO <em>TECH AFRICA</em></span>}
+      <span className={`brand-logo ${full ? 'brand-logo-footer' : ''}`}>
+        <Image src="/images/logos/logo.png" alt="Next Go Tech" fill sizes={full ? '210px' : '58px'} priority={!full} />
+      </span>
     </Link>
   );
 }

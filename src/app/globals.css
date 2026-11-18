@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { --bg: #090909; --surface: #17191d; --surface-2: #1e2127; --line: #292c33; --text: #f5f6fa; --muted: #a0a3ad; --blue: #0866ff; --blue-2: #1877f2; --max: 1310px; }
+:root { --bg: #090909; --surface: #17191d; --surface-2: #1e2127; --line: #292c33; --text: #f5f6fa; --muted: #a0a3ad; --blue: #dbff09; --blue-2: #efff74; --max: 1310px; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--bg); }
 body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-inter), Arial, sans-serif; overflow-x: hidden; }
@@ -42,3 +42,14 @@ main { min-height: 70vh; } h1, h2, h3, p { margin-top: 0; } p { color: var(--mut
 .privacy-launcher { position:fixed;z-index:70;right:20px;bottom:18px;border:1px solid #3b414c;background:rgba(23,25,29,.88);backdrop-filter:blur(9px);border-radius:999px;min-height:34px;padding:0 13px;color:#c7cad1;font-size:11px;font-weight:600;transition:border-color .2s ease,color .2s ease; }.privacy-launcher:hover { border-color:var(--blue);color:#fff; }
 @media (max-width:760px) { .privacy-launcher { right:11px;bottom:11px; } }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important; } }
+
+/* Next Go Tech lime identity — derived from the supplied logo. */
+:root { --blue: #dbff09; --blue-2: #efff74; --lime-deep: #9dba06; --lime-soft: rgba(219,255,9,.16); --lime-glow: rgba(219,255,9,.34); }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline-color: var(--blue); }
+.button.primary { background: var(--blue); color: #080a04; box-shadow: 0 0 0 0 var(--lime-soft); }.button.primary:hover { background: var(--blue-2); color: #080a04; box-shadow: 0 12px 30px var(--lime-glow); }.button.outline:hover { background: var(--lime-soft); }
+.brand { gap: 0; }.brand-logo { position: relative; display: block; width: 62px; height: 62px; flex: 0 0 auto; overflow: hidden; }.brand-logo img { object-fit: contain; object-position: center; }.brand-logo-footer { width: 176px; height: 116px; }
+.nav-pill button.active, .language:hover, .mega-link > span, .mega-intro a, .case-menu a, .attribute-grid svg, .capability-chip svg, .work-card > svg, .contact-cta svg, .card-arrow, .process-grid b, .career-grid b, .internship-grid b, .values-grid b, .process-grid svg, .detail-body li span, .case-spec li svg, .journey-shape span, .simple-detail-list b, .location-card p svg, .booking-intro li svg, .culture-grid svg, .privacy-note svg, .footer-grid svg { color: var(--blue); }
+.card-arrow, .journey-shape span, .mini-logo { background: var(--blue); color: #080a04; }.mega-link:hover { background: var(--lime-soft); }.visual-card:hover { border-color: var(--blue); }.capability-chip:hover { border-color: var(--blue); }.footer-grid a:hover, .footer-bottom a:hover, .text-link:hover { color: var(--blue-2); }
+.hero-art img { filter: hue-rotate(-146deg) saturate(1.75) brightness(1.1); }.hero-chat { color: #080a04; }.hero-chat.one { background: #dbff09; }.hero-chat.two { background: #c5eb08; }.studio-glow { background: radial-gradient(circle, #dbff09 0, rgba(219,255,9,.24) 33%, transparent 67%); }.studio-photo { background: linear-gradient(105deg, #12180a 0%, #171f0b 45%, #0c0e08 75%); }.contact-cta::before, .page-hero::before { background: radial-gradient(ellipse, rgba(219,255,9,.22), transparent 65%); }.careers-hero { background: radial-gradient(circle at 71% 33%, rgba(219,255,9,.24), transparent 25%); }
+.journey-shape i:nth-child(1) { border-color: var(--lime-deep); }.field em { color: var(--blue); }.field input:focus, .field textarea:focus { border-color: var(--blue); }.consent input { accent-color: var(--blue); }.form-success > span, .booking-confirm > span { background: var(--lime-soft); color: var(--blue); }.map-art { background: linear-gradient(145deg, #596518, #1a2109); }.map-art i { background: var(--blue); box-shadow: 0 0 0 11px var(--lime-soft); }.booking-intro { background: radial-gradient(circle at 25% 5%, rgba(219,255,9,.46), transparent 42%), #16191f; }.slots button:hover, .slots button.selected { border-color: var(--blue); background: var(--lime-soft); }.privacy-note { border-color: var(--lime-deep); background: var(--lime-soft); }.privacy-launcher:hover { border-color: var(--blue); color: var(--blue); }
+@media (max-width: 760px) { .brand-logo { width: 56px; height: 56px; }.brand-logo-footer { width: 160px; height: 106px; } }
